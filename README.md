@@ -1,2 +1,2 @@
-# Genius
-A ideia do projeto é projetar um programa que se comporte como o jogo "Genius"
+# Projetos
+Projetos acadêmico para o curso de Engenharia Eletrônica
