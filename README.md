@@ -1,2 +1,2 @@
-# Projetos
-Meus projetos acadêmicos do curso de Engenharia Eletrônica (IFSC)
+# Genius
+A ideia do projeto é projetar um programa que se comporte como o jogo "Genius"
