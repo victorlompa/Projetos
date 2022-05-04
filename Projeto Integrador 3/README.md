@@ -7,7 +7,14 @@
 Dados de velocidade média, velocidade de rajadas e direção predominante do vento com base em uma análise a longo prazo do ambiente em que a estação está inserida. Os dados podem ser coletados pelo usuário por meio de conexão USB (posteriormente será interessante enviar automaticamente estes dados diariamente para um aplicativo)
 ...
 
+Envio de dados (dd;mm;aaaa;hh;mm) - 16bytes
 
+Velocidade média poderá ser armazenada uma vez a cada dez minutos (144 vezes por dia) - uint8_t ou uint16_t
+Por mais que seja armazenado apenas uma vez a cada dez minutos, os sinais estarão sendo recebidos em uma frequência maior para que seja possível identificar velocidade de rajadas, pontos fora da curva. Os valores de rajadas serão armazenados separadamente.
+
+Direção dos ventos deve ter precisão entre 1 e 10°.
+
+32 bytes 144 vezes por dia - 4.6kb por dia
 
 ### Componentes
 
