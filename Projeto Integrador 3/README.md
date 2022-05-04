@@ -33,8 +33,7 @@ Módulo Usb Host CH376 Serial - Comunicação. Arquiva os dados recebidos pelos 
 
 ESP8266 ESP01 (Opcional) - Comunicação. Envia diariamente os dados recebidos pelos sensores para um servidor.
 
-![image](https://user-images.githubusercontent.com/53865196/166670532-0aea420d-049e-4c29-9f22-4a064183df3b.png)
-
+![image](https://user-images.githubusercontent.com/53865196/166670863-807d234b-e54c-42fd-8791-b237bbb9558b.png)
 
 ### Apresentação de Resultados
 Apresentação de gráficos para facilitar a visibilidade dos dados. Arquivo em CSV facilita a construção destes gráficos.
