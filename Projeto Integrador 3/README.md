@@ -1,9 +1,54 @@
 # Projeto Final
-## Estação Meteorológica
+
+## Estação de Análise Eólica
 
 ### Introdução
-### Metodologia
-### Design
-### Programação
-### Conclusão
+
+Dados de velocidade média, velocidade de rajadas e direção predominante do vento com base em uma análise a longo prazo do ambiente em que a estação está inserida. Os dados podem ser coletados pelo usuário por meio de conexão USB (posteriormente será interessante enviar automaticamente estes dados diariamente para um aplicativo)
+...
+
+
+
+### Componentes
+
+Biruta - Direção do vento. Oito chaves, resistores variados para resultado de 16 resistências diferentes. Divisor de tensão para o recebimento do sinal no microcontrolador e medição por conversor analógico-digital. Reed Switch?
+![image](https://user-images.githubusercontent.com/53865196/166604822-087266a0-b52b-4337-af3c-d1fbd82a1ba4.png)
+
+Anemômetro - Medição da velocidade do vento. Pode ser calculado com um sensor indutivo ou com ímãs que irão gerar interrupções para cada giro do anemômetro. Problemas: Medição para baixas velocidades. Os picos de velocidade (rajadas) podem ser observados e separados por software. Tacômetro?
+![image](https://user-images.githubusercontent.com/53865196/166604865-da31f7aa-95f9-4a9e-924b-1afea0b5e065.png)
+
+Blue Pill (STM32F103) - Familiaridade com o micro, utilização em outra disciplina, possui ADC para a biruta, não terá problemas com o número de interrupções que o anemômetro irá gerar para velocidades elevadas. O baixo consumo do micro também ajudará a manter o circuito funcionando por longos períodos de tempo.
+![image](https://user-images.githubusercontent.com/53865196/166605127-648ea539-50ae-4466-bd5a-064f075be871.png)
+
+Bateria recarregável - Alimentar circuitos. Preocupação com baixo consumo para que o circuito possa se manter por longo período de tempo (possivelmente meses). Seria possível usar uma placa fotovoltaica para recarregar bateria (circuito a parte).
+![image](https://user-images.githubusercontent.com/53865196/166605095-5a4deab4-6c92-440b-b298-d513ee7bb9cc.png)
+
+### Apresentação de Resultados
+Apresentação de gráficos para facilitar a visibilidade dos dados. Arquivo em CSV facilita a construção destes gráficos.
+
+### Viabilidade Econômica
+Estudar documentos em referências.
+
 ### Referências
+
+https://www.quantumengenharia.net.br/historia-da-producao-de-energia-sustentabilidade/
+
+http://wiki.foz.ifpr.edu.br/wiki/index.php/Estacao_Meteorologica
+
+https://content.meteoblue.com/pt/especificacoes/variaveis-meteorologicas/vento#:~:text=Para%20a%20velocidade%20do%20vento,1%20kn%20%3D%201.852%20km%2Fh
+
+https://www.climadeensinar.com.br/post/2016/09/08/como-%C3%A9-medida-a-velocidade-do-vento
+
+https://www.windytips.com/
+
+https://www.windytips.com/docs/03%20Medi%C3%A7%C3%A3o%20do%20vento.pdf
+
+https://lume.ufrgs.br/bitstream/handle/10183/198303/001099204.pdf?sequence=1&isAllowed=y
+
+https://ecen.com/eee83/eee83p/viabilidade_energia_eolica.htm
+
+https://engemausp.submissao.com.br/22/arquivos/559.pdf
+
+https://www.monografias.ufop.br/bitstream/35400000/208/1/MONOGRAFIA_EnergiaE%C3%B3licaViabilidade.pdf
+
+http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf
