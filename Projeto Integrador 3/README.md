@@ -12,16 +12,29 @@ Dados de velocidade média, velocidade de rajadas e direção predominante do ve
 ### Componentes
 
 Biruta - Direção do vento. Oito chaves, resistores variados para resultado de 16 resistências diferentes. Divisor de tensão para o recebimento do sinal no microcontrolador e medição por conversor analógico-digital. Reed Switch?
+
 ![image](https://user-images.githubusercontent.com/53865196/166604822-087266a0-b52b-4337-af3c-d1fbd82a1ba4.png)
 
 Anemômetro - Medição da velocidade do vento. Pode ser calculado com um sensor indutivo ou com ímãs que irão gerar interrupções para cada giro do anemômetro. Problemas: Medição para baixas velocidades. Os picos de velocidade (rajadas) podem ser observados e separados por software. Tacômetro?
+
 ![image](https://user-images.githubusercontent.com/53865196/166604865-da31f7aa-95f9-4a9e-924b-1afea0b5e065.png)
 
 Blue Pill (STM32F103) - Familiaridade com o micro, utilização em outra disciplina, possui ADC para a biruta, não terá problemas com o número de interrupções que o anemômetro irá gerar para velocidades elevadas. O baixo consumo do micro também ajudará a manter o circuito funcionando por longos períodos de tempo.
+
 ![image](https://user-images.githubusercontent.com/53865196/166605127-648ea539-50ae-4466-bd5a-064f075be871.png)
 
 Bateria recarregável - Alimentar circuitos. Preocupação com baixo consumo para que o circuito possa se manter por longo período de tempo (possivelmente meses). Seria possível usar uma placa fotovoltaica para recarregar bateria (circuito a parte).
+
 ![image](https://user-images.githubusercontent.com/53865196/166605095-5a4deab4-6c92-440b-b298-d513ee7bb9cc.png)
+
+Módulo Usb Host CH376 Serial - Comunicação. Arquiva os dados recebidos pelos sensores em arquivo CSV em uma mídia removível que pode ser facilmente acessada pelo usuário para avaliação dos dados.
+
+![image](https://user-images.githubusercontent.com/53865196/166669733-8ed16903-c4da-438c-8fbb-41092166b848.png)
+
+ESP8266 ESP01 (Opcional) - Comunicação. Envia diariamente os dados recebidos pelos sensores para um servidor.
+
+![image](https://user-images.githubusercontent.com/53865196/166670532-0aea420d-049e-4c29-9f22-4a064183df3b.png)
+
 
 ### Apresentação de Resultados
 Apresentação de gráficos para facilitar a visibilidade dos dados. Arquivo em CSV facilita a construção destes gráficos.
@@ -52,3 +65,5 @@ https://engemausp.submissao.com.br/22/arquivos/559.pdf
 https://www.monografias.ufop.br/bitstream/35400000/208/1/MONOGRAFIA_EnergiaE%C3%B3licaViabilidade.pdf
 
 http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf
+
+https://capsistema.com.br/index.php/2020/06/02/conectando-o-esp8266-ao-stm32f103c8-criando-um-servidor-da-web/
