@@ -24,6 +24,8 @@ Biruta - Direção do vento. Oito chaves, resistores variados para resultado de 
 
 Anemômetro - Medição da velocidade do vento. Pode ser calculado com um sensor indutivo ou com ímãs que irão gerar interrupções para cada giro do anemômetro. Problemas: Medição para baixas velocidades. Os picos de velocidade (rajadas) podem ser observados e separados por software. Tacômetro?
 
+https://www.thingiverse.com/thing:2523343
+
 ![image](https://user-images.githubusercontent.com/53865196/166604865-da31f7aa-95f9-4a9e-924b-1afea0b5e065.png)
 
 Blue Pill (STM32F103) - Familiaridade com o micro, utilização em outra disciplina, possui ADC para a biruta, não terá problemas com o número de interrupções que o anemômetro irá gerar para velocidades elevadas. O baixo consumo do micro também ajudará a manter o circuito funcionando por longos períodos de tempo.
