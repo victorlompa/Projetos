@@ -28,21 +28,15 @@ https://www.thingiverse.com/thing:2523343
 
 ![image](https://user-images.githubusercontent.com/53865196/166604865-da31f7aa-95f9-4a9e-924b-1afea0b5e065.png)
 
-Blue Pill (STM32F103) - Familiaridade com o micro, utilização em outra disciplina, possui ADC para a biruta, não terá problemas com o número de interrupções que o anemômetro irá gerar para velocidades elevadas. O baixo consumo do micro também ajudará a manter o circuito funcionando por longos períodos de tempo.
+ESP32 - Possui suporte para conexão bluetooth que será utilizada no desenvolvimento do projeto. Além disso, condiz com os requisitos de 
 
-![image](https://user-images.githubusercontent.com/53865196/166605127-648ea539-50ae-4466-bd5a-064f075be871.png)
+![image](https://user-images.githubusercontent.com/53865196/167844877-75a34993-2a63-4904-925d-c5c8eb43f457.png)
 
 Bateria recarregável - Alimentar circuitos. Preocupação com baixo consumo para que o circuito possa se manter por longo período de tempo (possivelmente meses). Seria possível usar uma placa fotovoltaica para recarregar bateria (circuito a parte).
 
 ![image](https://user-images.githubusercontent.com/53865196/166605095-5a4deab4-6c92-440b-b298-d513ee7bb9cc.png)
 
-Módulo Usb Host CH376 Serial - Comunicação. Arquiva os dados recebidos pelos sensores em arquivo CSV em uma mídia removível que pode ser facilmente acessada pelo usuário para avaliação dos dados.
-
-![image](https://user-images.githubusercontent.com/53865196/166669733-8ed16903-c4da-438c-8fbb-41092166b848.png)
-
-ESP8266 ESP01 (Opcional) - Comunicação. Envia diariamente os dados recebidos pelos sensores para um servidor.
-
-![image](https://user-images.githubusercontent.com/53865196/166670863-807d234b-e54c-42fd-8791-b237bbb9558b.png)
+Memória Flash - Armazenamento de dados fornecidos pelos sensores. Ao enviar os dados por bluetooth, os dados são apagados da memória flash. Uma memória de 32M já é o suficiente para suportar os dados gerados por mais de 1 mês.
 
 ### Apresentação de Resultados
 Apresentação de gráficos para facilitar a visibilidade dos dados. Arquivo em CSV facilita a construção destes gráficos.
