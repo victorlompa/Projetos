@@ -9,10 +9,11 @@ Dados de velocidade média, velocidade de rajadas e direção predominante do ve
 
 ### Requisito de projeto
 
-A velocidade média deerá ser armazenada uma vez a cada dez minutos, resultando em 144 medições de velocidade diárias.
+A velocidade média deverá ser armazenada uma vez a cada dez minutos, resultando em 144 medições de velocidade diárias. A velocidade dos ventos durante tempestades pode chegar a 25,1 m/s, portanto este dado será de 8bits, resultando em 1,152kb por dia.
 Por mais que seja armazenado apenas uma vez a cada dez minutos, os sinais estarão sendo recebidos em uma frequência maior para que seja possível identificar velocidade de rajadas, pontos fora da curva. Os valores de rajadas serão armazenados separadamente.
 A direção dos ventos medida pela biruta deverá ter precisão entre 10 e 15°.
 Com base na necessidade prevista de armazenamento de dados até que seja possível se comunicar com o usuário, o projeto deverá ter capacidade de armazenamento suficiente para cerca de um mês.
+Os dados serão enviados em um modelo (dd;mm;aaaa;hh;mm-vel-dir)
 
 
 ### Componentes
