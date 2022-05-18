@@ -7,34 +7,23 @@
 Dados de velocidade média, velocidade de rajadas e direção predominante do vento com base em uma análise a longo prazo do ambiente em que a estação está inserida. Os dados podem ser coletados pelo usuário por meio de conexão USB (posteriormente será interessante enviar automaticamente estes dados diariamente para um aplicativo)
 ...
 
-Envio de dados (dd;mm;aaaa;hh;mm) - 16bytes
+### Requisito de projeto
 
-Velocidade média poderá ser armazenada uma vez a cada dez minutos (144 vezes por dia) - uint8_t ou uint16_t
+A velocidade média deerá ser armazenada uma vez a cada dez minutos, resultando em 144 medições de velocidade diárias.
 Por mais que seja armazenado apenas uma vez a cada dez minutos, os sinais estarão sendo recebidos em uma frequência maior para que seja possível identificar velocidade de rajadas, pontos fora da curva. Os valores de rajadas serão armazenados separadamente.
+A direção dos ventos medida pela biruta deverá ter precisão entre 10 e 15°.
+Com base na necessidade prevista de armazenamento de dados até que seja possível se comunicar com o usuário, o projeto deverá ter capacidade de armazenamento suficiente para cerca de um mês.
 
-Direção dos ventos deve ter precisão entre 1 e 10°.
-
-32 bytes 144 vezes por dia - 4.6kb por dia
 
 ### Componentes
 
-Biruta - Direção do vento. Oito chaves, resistores variados para resultado de 16 resistências diferentes. Divisor de tensão para o recebimento do sinal no microcontrolador e medição por conversor analógico-digital. Reed Switch?
+Biruta - Será usado para medição de direção dos ventos. Oito sensores magnéticos já seriam viáveis para uma medição com precisão de 22.5°, porém para uma maior precisão sem ter que dobrar a quantidade de sensores. 
 
-![image](https://user-images.githubusercontent.com/53865196/166604822-087266a0-b52b-4337-af3c-d1fbd82a1ba4.png)
+Anemômetro - Usado para medição da velocidade do vento. Apenas um sensor de efeito Hall é capaz de realizar a medição de velocidade necessária para o projeto. O cálculo por software deve também considerar o sentido do vento para avaliar a velocidade real do vento e não apenas a velocidade de giro do protótipo.
 
-Anemômetro - Medição da velocidade do vento. Pode ser calculado com um sensor indutivo ou com ímãs que irão gerar interrupções para cada giro do anemômetro. Problemas: Medição para baixas velocidades. Os picos de velocidade (rajadas) podem ser observados e separados por software. Tacômetro?
+ESP32 - Possui suporte para conexão bluetooth que será utilizada no desenvolvimento do projeto. Além disso, atende todas as necessidades de processamento.
 
-https://www.thingiverse.com/thing:2523343
-
-![image](https://user-images.githubusercontent.com/53865196/166604865-da31f7aa-95f9-4a9e-924b-1afea0b5e065.png)
-
-ESP32 - Possui suporte para conexão bluetooth que será utilizada no desenvolvimento do projeto. Além disso, condiz com os requisitos de 
-
-![image](https://user-images.githubusercontent.com/53865196/167844877-75a34993-2a63-4904-925d-c5c8eb43f457.png)
-
-Bateria recarregável - Alimentar circuitos. Preocupação com baixo consumo para que o circuito possa se manter por longo período de tempo (possivelmente meses). Seria possível usar uma placa fotovoltaica para recarregar bateria (circuito a parte).
-
-![image](https://user-images.githubusercontent.com/53865196/166605095-5a4deab4-6c92-440b-b298-d513ee7bb9cc.png)
+Bateria recarregável - Usada para alimentação dos circuitos. Preocupação com baixo consumo para que o circuito possa se manter por longo período de tempo (possivelmente meses). Seria possível usar uma placa fotovoltaica para recarregar bateria (circuito a parte).
 
 Memória Flash - Armazenamento de dados fornecidos pelos sensores. Ao enviar os dados por bluetooth, os dados são apagados da memória flash. Uma memória de 32M já é o suficiente para suportar os dados gerados por mais de 1 mês.
 
