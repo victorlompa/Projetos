@@ -2,13 +2,23 @@
 
 ## Estação de Análise Eólica
 
+### Sumário
+1. [Introdução](#introdução)
+2. [Requisitos de projeto](#requisitos-de-projeto)
+3. [Design](#design)
+4. [Implementação](#implementação)
+5. [Resultados](#resultados)
+6. [Considerações Finais](#considerações-finais)
+7. [Referências](#referências)
+
 ### Introdução
+
+O constante avanço de meios de produção de energia traz consigo 
+
+### Requisitos de projeto
 
 Dados de velocidade média, velocidade de rajadas e direção predominante do vento com base em uma análise a longo prazo do ambiente em que a estação está inserida. Os dados podem ser coletados pelo usuário por meio de conexão USB (posteriormente será interessante enviar automaticamente estes dados diariamente para um aplicativo)
 ...
-
-### Requisito de projeto
-
 A velocidade média deverá ser armazenada uma vez a cada dez minutos, resultando em 144 medições de velocidade diárias. A velocidade dos ventos durante tempestades pode chegar a 25,1 m/s, portanto este dado será de 8bits, resultando em 1,152kb por dia.
 Por mais que seja armazenado apenas uma vez a cada dez minutos, os sinais estarão sendo recebidos em uma frequência maior para que seja possível identificar velocidade de rajadas, pontos fora da curva. Os valores de rajadas serão armazenados separadamente.
 A direção dos ventos medida pela biruta deverá ter precisão entre 10 e 15°.
@@ -16,7 +26,7 @@ Com base na necessidade prevista de armazenamento de dados até que seja possív
 Os dados serão enviados em um modelo (dd;mm;aaaa;hh;mm-vel-dir)
 
 
-### Componentes
+### Design
 
 Biruta - Será usado para medição de direção dos ventos. Oito sensores magnéticos já seriam viáveis para uma medição com precisão de 22.5°, porém para uma maior precisão sem ter que dobrar a quantidade de sensores. 
 
@@ -28,12 +38,9 @@ Bateria recarregável - Usada para alimentação dos circuitos. Preocupação co
 
 Memória Flash - Armazenamento de dados fornecidos pelos sensores. Ao enviar os dados por bluetooth, os dados são apagados da memória flash. Uma memória de 32M já é o suficiente para suportar os dados gerados por mais de 1 mês.
 
-### Apresentação de Resultados
-Apresentação de gráficos para facilitar a visibilidade dos dados. Arquivo em CSV facilita a construção destes gráficos.
-
-### Viabilidade Econômica
-Estudar documentos em referências.
-
+### Implementação
+### Resultados
+### Considerações Finais
 ### Referências
 Esta sessão será organizada e os documentos deverão ser referenciados corretamente
 
