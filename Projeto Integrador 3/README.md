@@ -314,9 +314,10 @@ O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que inde
 
 O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
 
+
 ![Sem título](https://user-images.githubusercontent.com/53865196/181165618-43a49c92-6297-4766-9136-80ac9b9b36c5.jpg)
 
-
+chart.js
 
 
 ------
