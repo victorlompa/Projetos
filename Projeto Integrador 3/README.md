@@ -2,6 +2,16 @@
 
 ## Estação de Análise Eólica
 
+Discente: Victor Lompa Schwider
+
+Docentes: Daniel Lohmann e Robinson Pizzio
+
+Unidade Curricular: Projeto Integrador 3
+
+
+
+------
+
 ### Sumário
 
 1. [Introdução](#introdução)
@@ -12,15 +22,33 @@
 6. [Considerações Finais](#considerações-finais)
 7. [Referências](#referências)
 
+
+
+------
+
 ### Introdução
 
 A grande demanda energética das últimas décadas trás consigo a necessidade de constantes avanços nos meios de produção de energia. Sucessivas crises energéticas, como o apagão de 2001 no Brasil, ilustram esta necessidade e levantam algumas questões a serem discutidas. De acordo com uma [pesquisa](https://www.epe.gov.br/pt/abcdenergia/matriz-energetica-e-eletrica) de 2021 feito pela Empresa de Pesquisa Energética,  os combustíveis fósseis são responsáveis por cerca de 80% da matriz energética mundial, apesar dos grandes esforços dos últimos anos em pesquisa de meios de geração de energia com foco em energias renováveis.
 
 Apesar do foco em sustentabilidade, esta modalidade de geração de energia está atrelada a um custo. Atualmente, a instalação de usinas eólicas é vantajosa? A ideia deste projeto é desenvolver uma estação para coleta de dados referentes a velocidade e direção do vento em determinado local para avaliar a possibilidade de instalação de usinas eólicas de pequeno ou grande porte tal como a expectativa de retorno financeiro para a mesma.
 
+
+
+------
+
 ### Requisitos de projeto
 
+Para que seja possível avaliar a viabilidade econômica do projeto de instalação de uma usina, é necessário avaliar o os dados de velocidade e direção e, com base em estudos previamente efetuados de aerogeradores reais, deverá ser possível mensurar seu retorno financeiro. Para tal, é necessário que seja desenvolvida uma aplicação capaz de receber dados, avaliá-los e apresentá-los ao usuário em forma de gráficos, por exemplo.
 
+Os dados a seres avaliados pode estar em uma Database ou até mesmo em um arquivo .CSV salvo em diretório local, porém os dados coletados dos sensores que serão necessários devem ter como intermediador um microcontrolador pois precisarão ser tratados até que possam ser interpretados.
+
+Como a ideia do projeto é uma estação que deve permanecer fixa em um local por um longo período de tempo, é ideal que esta possa suportar intemperes como calor, chuva e até mesmo o próprio vento. 
+
+A capacidade de bateria do módulo deve ser suficiente para durar longos períodos de tempo. Para isso, pode ser usada uma bateria recarregável com uma placa fotovoltaica capaz de suportar o consumo energético do projeto. Caso a escolha seja de uma bateria, é necessário alertar o usuário caso o nível da bateria esteja abaixo do normal para que seja feita a manutenção ou, em último caso, alimentar o projeto com um longo cabo.
+
+
+
+------
 
 ### Design
 
@@ -52,9 +80,47 @@ Com isso,  a escolha final para ferramenta de envio de dados para posterior aná
 
 Por possuir um módulo Bluetooth LE em sua própria placa de desenvolvimento, o ESP32-DevKit foi a primeira opção de microcontrolador, apesar da falta de familiaridade. A programação do mesmo foi feita com o Visual Studio Code e a extensão PlatformIO, que possui diversas bibliotecas próprias para ESP32, facilitando o processo de programação.
 
+#### Consumo Energético
+
+Para a alimentação das placas e módulos, optou-se pela utilização de uma bateria de 9V e uma módulo para converter a tensão da bateria em 5V e 3.3V, suficiente para resolver parcialmente problema do sensor de efeito hall e alimentar o ESP32. 
+
+
+
+------
+
+### Implementação
+
+O protótipo foi feito com base em um [modelo](https://www.thingiverse.com/thing:5190383) encontrado [thingiverse](https://www.thingiverse.com/). Alguns ajustes foram necessários para encaixo dos módulos e melhor leitura dos ímãs. Para que consiga uma durabilidade melhor e resistência a intemperes, o protótipo deve ser impressão em ABS. Para uma prova de conceito, o protótipo impresso neste projeto foi em PLA, portanto não deverá ser testado em ambiente externo.
+
+![WhatsApp Image 2022-07-27 at 01.19.46 (1)](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.19.46 (1).jpeg)
+
+O projeto utiliza 4 rolamentos 624Z de 4mm x 13mm x 5mm e duas barras de metal. As barras de metal foram manufaturas com uma barra de diâmetro maior utilizando uma esmirilhadeira. A conexão das peças é feita com hachuras da própria peça. Algumas partes tiveram que ser coladas e/ou vedadas com epóxi para um melhor resultado.
+
+Os footprints dos módulos utilizados no projeto não condizem com os da impressão, portanto tiveram de ser removidos para uma melhor fixação dos mesmos.
+
+![WhatsApp Image 2022-07-27 at 01.19.45 (1)](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.19.45 (1).jpeg)
+
+O circuito para utilização do sensor de efeito hall apresentado abaixo conta com um BC548 funcionando como chave. A saída possui um resistor de pull-up colocando o pino do ESP32 para 3.3V quando o transistor não está polarizado. Quando o sensor detecta um campo magnético forte o suficiente, apresenta 5V na sua saída, polarizando o transistor e, consequentemente, jogando GND na saída do pino do ESP.
+
+A escolha dos ímãs é importante. Por mais que alguns deles funcionem ao testar o sensor dado a proximidade e a ausência de obstáculos, alguns deles podem não funcionar quando fixados no protótipo por serem fracos demais.
+
+![Untitled Sketch 2_bb](C:\Users\Victor\Downloads\Untitled Sketch 2_bb.jpg)
+
+O módulo AS5600 pode ser conectado diretamente no ESP32 de maneira que SCL seja conectado ao pino GPIO22 e SDA seja conectado ao pino GPIO21. Os pinos DIR, GPO e OUT não foram necessários para esta aplicação. O pino OUT poderia ter sido utilizado para obter o valor por meio de um PWM. A alimentação utilizada em VCC foi de 3.3V, diretamente do pino de saída do ESP32.
+
+![WhatsApp Image 2022-07-27 at 01.42.25](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.42.25.jpeg)
+
+
+
+------
+
 ### Código
 
 O código do programa apresentado abaixo inclui a obtenção e tratamento dos dados provenientes dos sensores, obtenção do horário exato para referenciação dentro da Database e conexão e envio de dados para a Database. A biblioteca utilizada para leitura dos dados do módulo AS5600 podem ser encontradas nos arquivos do projeto.
+
+O valor de velocidade é calculado a cada segundo e é acrescido num somatório para cálculo da média. Após 1 minuto, o somatório de velocidades resulta na média para o dado minuto e é enviado para o banco de dados junto do ângulo de direção da biruta e a velocidade de pico que é a maior velocidade adquirida no minuto.
+
+O cálculo da velocidade do anemômetro é feito com base em suas características construtivas, resultando em um fator constante que pode ser utilizado para diminuir o tempo de processamento dos cálculos.
 
 ```C++
 /* ESP32 Libraries */
@@ -81,10 +147,10 @@ O código do programa apresentado abaixo inclui a obtenção e tratamento dos da
 #include "AS5600.h"
 
 /* Firebase Defines */
-#define DATABASE_URL "https://windstation-5f17d-default-rtdb.firebaseio.com/"
-#define API_KEY "AIzaSyAryL_5tPGzdpO0_CaSgIH3CEe4AnR42jw"
-#define USER_EMAIL "titilompa@gmail.com"
-#define USER_PASSWORD "DteXT53QeWtQ7WGkVKdN"
+#define DATABASE_URL "https://xxxxxxxxxxx.firebaseio.com/"
+#define API_KEY "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+#define USER_EMAIL "xxxxxxxxx@gmail.com"
+#define USER_PASSWORD "xxxxxxxxxxx"
 
 /* NTP Defines */
 #define dirstr  "Direction"
@@ -92,8 +158,8 @@ O código do programa apresentado abaixo inclui a obtenção e tratamento dos da
 #define peakstr "Peak"
 
 /* Project Defines */
-#define WIFI_SSID "Schwider"            // Wifi Name
-#define WIFI_PASSWORD "48991159652!!!"  // WiFi Password
+#define WIFI_SSID "xxxxxxx"            // Wifi Name
+#define WIFI_PASSWORD "xxxxxxxxxxxxx"  // WiFi Password
 #define LED 2                           // LED GPIO number
 #define HALL 15                         // HAL GPIO number
 #define USTOSEC 1000000                 // Convert timer factor to seconds 
@@ -178,7 +244,7 @@ void setup()
   pinMode(LED, OUTPUT);
   My_timer = timerBegin(0, 80, true);
   timerAttachInterrupt(My_timer, &wifiTimer, true);
-  timerAlarmWrite(My_timer, 5*USTOSEC, true); // Value in Seconds
+  timerAlarmWrite(My_timer, 60*USTOSEC, true); // Value in Seconds
   timerAlarmEnable(My_timer); 
   
   /* Sensor Hall Config */
@@ -233,29 +299,49 @@ void loop()
 
 ```
 
+
+
+------
+
 ### Resultados
+
+A precisão dos sensores é satisfatória. O valor de ângulo varia um pouco mesmo com a biruta estável porém a variação é pequena. Os valores de velocidade são calculados com sucesso e, junto deles o valor de pico para um determinado intervalor de tempo.
+
+O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que independe da distância com o usuário e possui maior compatibilidade com o sistema operacional em que o projeto foi desenvolvido (Windows).
+
+O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
+
+![Sem título](C:\Users\Victor\Downloads\Sem título.jpg)
+
+
+
+------
 
 ### Considerações Finais
 
+
+
+
+
+------
+
 ### Referências
 
-[A história da produção de energia](https://www.quantumengenharia.net.br/historia-da-producao-de-energia-sustentabilidade/)
+A HISTÓRIA DA PRODUÇÃO DE ENERGIA, Quantum Engenharia 2017. Disponível em: https://www.quantumengenharia.net.br/historia-da-producao-de-energia-sustentabilidade/. Acesso em: 25 maio de 2022
 
-[Estação meteorológica](http://wiki.foz.ifpr.edu.br/wiki/index.php/Estacao_Meteorologica)
+Estacao Meteorologica, IFPR 2016. Disponível em: http://wiki.foz.ifpr.edu.br/wiki/index.php/Estacao_Meteorologica. Acesso em: 25 maio de 2022
 
-[Variáveis Meteorologicas](https://content.meteoblue.com/pt/especificacoes/variaveis-meteorologicas/vento#:~:text=Para%20a%20velocidade%20do%20vento,1%20kn%20%3D%201.852%20km%2Fh)
+Como é medida a velocidade do vento?, Clima de Ensinar 2016. Disponível em: https://www.climadeensinar.com.br/post/2016/09/08/como-%C3%A9-medida-a-velocidade-do-vento. Acesso em: 25 maio de 2022
 
-[Medição de Velocidade do vento](https://www.climadeensinar.com.br/post/2016/09/08/como-%C3%A9-medida-a-velocidade-do-vento)
+Modelo Climático para Ventos Extremos no Brasil/Brazilian Extreme Wind Climate, Matthew Bruce Vallis 2020. Disponível em: https://www.windytips.com/. Acesso em: 25 maio de 2022
 
-[Windytips](https://www.windytips.com/)
+Projeto Conceitual e Análise de Viabilidade Econômica de Unidade de Geração de Energia Elétrica Eólica na Lagoa dos Patos - RS, Ernesto Augusto Garbe, 2011. Disponível em: https://ecen.com/eee83/eee83p/viabilidade_energia_eolica.htm. Acesso: 25 maio de 2022
 
-[Brazilian extreme wind climate](https://lume.ufrgs.br/bitstream/handle/10183/198303/001099204.pdf?sequence=1&isAllowed=y)
+Energia Eólica: Viabilidade Técnica e Econômico-Financeira, João Monlevade 2016. Disponível em: https://www.monografias.ufop.br/bitstream/35400000/208/1/MONOGRAFIA_EnergiaE%C3%B3licaViabilidade.pdf. Acesso em 25 maio de 2022
 
-[Projeto Conceitual e Análise de Viabilidade Econômica de Unidade de Geração de Energia Elétrica Eólica na Lagoa dos Patos](https://ecen.com/eee83/eee83p/viabilidade_energia_eolica.htm)
+Getting Started with ESP32 Bluetooth Low Energy (BLE) on Arduino IDE.  Random Nerd Tutorials 2019. Disponível em: https://randomnerdtutorials.com/esp32-bluetooth-low-energy-ble-arduino-ide/. Acesso em: 25 maio de 2022
 
-[ENERGIA EÓLICA: análise da viabilidade econômico-financeira dos leilões de energia da Agência Nacional de Energia Elétrica](https://engemausp.submissao.com.br/22/arquivos/559.pdf)
-
-[Energia Eólica: Viabilidade Técnica e Econômico-Financeira](https://www.monografias.ufop.br/bitstream/35400000/208/1/MONOGRAFIA_EnergiaE%C3%B3licaViabilidade.pdf)
+BLE C++ Guide.  Neil Kolban 2018. Disponível em: https://github.com/nkolban/esp32-snippets/blob/master/Documentation/BLE%20C%2B%2B%20Guide.pdf. Acesso em 01 junho de 2022
 
 [Estudo de viabilidade Econômica para a implantação de uma fonte de energia renovável em uma grande consumidore de grande porte](http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf)
 
