@@ -92,23 +92,26 @@ Para a alimentação das placas e módulos, optou-se pela utilização de uma ba
 
 O protótipo foi feito com base em um [modelo](https://www.thingiverse.com/thing:5190383) encontrado [thingiverse](https://www.thingiverse.com/). Alguns ajustes foram necessários para encaixo dos módulos e melhor leitura dos ímãs. Para que consiga uma durabilidade melhor e resistência a intemperes, o protótipo deve ser impressão em ABS. Para uma prova de conceito, o protótipo impresso neste projeto foi em PLA, portanto não deverá ser testado em ambiente externo.
 
-![WhatsApp Image 2022-07-27 at 01.19.46 (1)](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.19.46 (1).jpeg)
+![WhatsApp Image 2022-07-27 at 01 19 46 (1)](https://user-images.githubusercontent.com/53865196/181165485-32a73740-831d-466e-b501-01485b0434cc.jpeg)
+
 
 O projeto utiliza 4 rolamentos 624Z de 4mm x 13mm x 5mm e duas barras de metal. As barras de metal foram manufaturas com uma barra de diâmetro maior utilizando uma esmirilhadeira. A conexão das peças é feita com hachuras da própria peça. Algumas partes tiveram que ser coladas e/ou vedadas com epóxi para um melhor resultado.
 
 Os footprints dos módulos utilizados no projeto não condizem com os da impressão, portanto tiveram de ser removidos para uma melhor fixação dos mesmos.
 
-![WhatsApp Image 2022-07-27 at 01.19.45 (1)](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.19.45 (1).jpeg)
+![WhatsApp Image 2022-07-27 at 01 19 45 (1)](https://user-images.githubusercontent.com/53865196/181165528-622bfb9f-0747-4227-a8df-2fb6849172e6.jpeg)
+
 
 O circuito para utilização do sensor de efeito hall apresentado abaixo conta com um BC548 funcionando como chave. A saída possui um resistor de pull-up colocando o pino do ESP32 para 3.3V quando o transistor não está polarizado. Quando o sensor detecta um campo magnético forte o suficiente, apresenta 5V na sua saída, polarizando o transistor e, consequentemente, jogando GND na saída do pino do ESP.
 
 A escolha dos ímãs é importante. Por mais que alguns deles funcionem ao testar o sensor dado a proximidade e a ausência de obstáculos, alguns deles podem não funcionar quando fixados no protótipo por serem fracos demais.
 
-![Untitled Sketch 2_bb](C:\Users\Victor\Downloads\Untitled Sketch 2_bb.jpg)
+![Untitled Sketch 2_bb](https://user-images.githubusercontent.com/53865196/181165547-b9638bf8-c292-4eda-9352-11f571046838.jpg)
+
 
 O módulo AS5600 pode ser conectado diretamente no ESP32 de maneira que SCL seja conectado ao pino GPIO22 e SDA seja conectado ao pino GPIO21. Os pinos DIR, GPO e OUT não foram necessários para esta aplicação. O pino OUT poderia ter sido utilizado para obter o valor por meio de um PWM. A alimentação utilizada em VCC foi de 3.3V, diretamente do pino de saída do ESP32.
 
-![WhatsApp Image 2022-07-27 at 01.42.25](C:\Users\Victor\Downloads\WhatsApp Image 2022-07-27 at 01.42.25.jpeg)
+![WhatsApp Image 2022-07-27 at 01 42 25](https://user-images.githubusercontent.com/53865196/181165562-1204e64a-5160-4a8f-bbc4-4cde04d7744a.jpeg)
 
 
 
@@ -311,7 +314,8 @@ O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que inde
 
 O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
 
-![Sem título](C:\Users\Victor\Downloads\Sem título.jpg)
+![Sem título](https://user-images.githubusercontent.com/53865196/181165618-43a49c92-6297-4766-9136-80ac9b9b36c5.jpg)
+
 
 
 
