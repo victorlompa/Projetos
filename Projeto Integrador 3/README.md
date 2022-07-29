@@ -330,6 +330,11 @@ Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atu
 
 Concluida a análise do aerogerador para potência nominal, é possível obter um cálculo aproximado do retorno econômico. Para isso, é necessário prever perdas da rede básica para consumo e para geração da energia e perdas na rede de distribuição. Estes dados nem sempre são exatos e precisariam de um estudo mais aprofundado acerca do tema específico.
 
+
+![weg](https://user-images.githubusercontent.com/53865196/181701031-9c0a6869-6258-40ef-99b4-dcae80e396b0.png)
+
+Este [aerogerador](https://static.weg.net/medias/downloadcenter/hee/hf1/WEG-aerogerador-agw-110-2.1-50030583-catalogo-portugues-br.pdf), por exemplo, apresenta a curva de potência e velocidade de corte e limite que nos permitem prever o comportamente do mesmo em relação à potência gerada.
+
 ### Resultados
 
 A precisão dos sensores é satisfatória. O valor de ângulo varia um pouco mesmo com a biruta estável porém a variação é pequena. Os valores de velocidade são calculados com sucesso e, junto deles o valor de pico para um determinado intervalor de tempo.
