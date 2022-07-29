@@ -333,16 +333,14 @@ Concluida a análise do aerogerador para potência nominal, é possível obter u
 
 ![weg](https://user-images.githubusercontent.com/53865196/181701031-9c0a6869-6258-40ef-99b4-dcae80e396b0.png)
 
-Este [aerogerador](https://static.weg.net/medias/downloadcenter/hee/hf1/WEG-aerogerador-agw-110-2.1-50030583-catalogo-portugues-br.pdf), por exemplo, apresenta a curva de potência e velocidade de corte e limite que nos permitem prever o comportamente do mesmo em relação à potência gerada. [Este](http://energybras.com.br/produtos/aerogeradores/modelo-h64-5000w) modelo que poderia ser utilizado como base para cálculo de aerogeradores de pequeno e médio porte
+Este [aerogerador](https://static.weg.net/medias/downloadcenter/hee/hf1/WEG-aerogerador-agw-110-2.1-50030583-catalogo-portugues-br.pdf), por exemplo, apresenta a curva de potência e velocidade de corte e limite que nos permitem prever o comportamente do mesmo em relação à potência gerada. [Este](http://energybras.com.br/produtos/aerogeradores/modelo-h64-5000w) é outro modelo que poderia ser utilizado como base para cálculo de aerogeradores de pequeno e médio porte, cotado em aproximadamente U$8000 a peça, excluindo o valor de instalação.
 
 Na sessão da planilha referente às condições de trabalho do aerogerados, calcula-se a porcentagem de tempo em que o aerogerador trabalha dentro das faixa de velocidade nominal e limite e abaixo dela. Com isso, é possível ter um valor aproximado da geração de energia considerando a potência nominal esperada para o mesmo.
 
 
 ![conditions](https://user-images.githubusercontent.com/53865196/181722756-0d23207b-1f6f-46ce-a08f-6c844f33f7d0.png)
 
-Para este aerogerador de 2100kW que trabalharia cerca de 90% do tempo a aproximadamente 66% da velocidade nominal, teríamos 1585kW, uma perda significativa na capacidade máxima de geração de energia para este aerogerador. Este valor nos proporcionaria 1141MWh ao mês. É necessário considerar uma parcela dessa energia gerada para o próprio consumo da usina para geração e também em perdas na rede de distribuição que podem ser significativas. Neste exemplo, utilizaremos 15% de perdas considerando consumo e distribuição.
-
-
+Para o aerogerador de 2100kW que trabalharia cerca de 90% do tempo a aproximadamente 66% da velocidade nominal, teríamos 1585kW, uma perda significativa na capacidade máxima de geração de energia para este aerogerador. Este valor nos proporcionaria 1141MWh ao mês. É necessário considerar uma parcela dessa energia gerada para o próprio consumo da usina para geração e também em perdas na rede de distribuição que podem ser significativas. Neste exemplo, utilizaremos 15% de perdas considerando consumo e distribuição.
 
 Os [dados](https://www.alemdaenergia.engie.com.br/custo-final-da-energia-eolica-e-o-mais-baixo-entre-as-fontes-renovaveis/) mais atualizados encontrados cotam a venda da energia eólica por MWh no Brasil a R$195, uma queda considerando os valores de anos anteriores.
 
@@ -385,3 +383,5 @@ BLE C++ Guide.  Neil Kolban 2018. Disponível em: https://github.com/nkolban/esp
 Estudo de viabilidade Econômica para a implantação de uma fonte de energia renovável em uma grande consumidore de grande . Raoni Stefano de Lima Ceci, 2016. Disponível em: http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf. Acesso em: 22 julho 2022
 
 Análise do desempenho de um aerogerador de pequeno porte. Ivoni C. Acunha Jr & Jorge A. Almeida, 2006. Dispoível em: https://semengo.furg.br/images/2006/06.pdf. Acesso em: 22 julho 2022
+
+Estimativa do Custo de Instalação de um Sistema Eólico de Pequeno Porte para Consumo de Energia Elétrica Residencial. Zaira Marques de Souza. Disponível em: https://cdn.congresse.me/286dvjx527s95q6nsk0waa4cpp5l Acesso em: 29 julho 2022
