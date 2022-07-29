@@ -342,23 +342,21 @@ Na sessão da planilha referente às condições de trabalho do aerogerados, cal
 
 Para o aerogerador de 2100kW que trabalharia cerca de 90% do tempo a aproximadamente 66% da velocidade nominal, teríamos 1585kW, uma perda significativa na capacidade máxima de geração de energia para este aerogerador. Este valor nos proporcionaria 1141MWh ao mês. É necessário considerar uma parcela dessa energia gerada para o próprio consumo da usina para geração e também em perdas na rede de distribuição que podem ser significativas. Neste exemplo, utilizaremos 15% de perdas considerando consumo e distribuição.
 
-Os [dados](https://www.alemdaenergia.engie.com.br/custo-final-da-energia-eolica-e-o-mais-baixo-entre-as-fontes-renovaveis/) mais atualizados encontrados cotam a venda da energia eólica por MWh no Brasil a R$195, uma queda considerando os valores de anos anteriores.
+Para uma instalação de pequeno porte, estes dados são suficientes para avaliar um bom negócio, baseado na geração de energia final possivelmente para consumo próprio e desconto direto na fatura. Para instalação de grande porte, a sessão de avaliação econômica apresenta cálculos para análise da viabilidade econômica com VPL, TIR, Payback simples, descontado e considerando opção de financiamento do valor inicial da construção e instalação da usina. É possível variar o custo de manutenção e de vendas anuais para poder prever variações no valor de venda ou até mesmo imprecisões nos cálculos efetuados.
+
+Os [dados](https://www.alemdaenergia.engie.com.br/custo-final-da-energia-eolica-e-o-mais-baixo-entre-as-fontes-renovaveis/) mais atualizados encontrados cotam a venda da energia eólica por MWh no Brasil a R$195, uma queda considerando os valores de anos anteriores. O exemplo encontrado na sessão da planilha para análise de risco para um projeto de geração de energia eólica apresenta um caso de potencial risco que possui um payback muito alto. Os valores de construção e custo operacional são fictícios e apenas servem como exemplo da utilização da ferramenta.
 
 
+![economic](https://user-images.githubusercontent.com/53865196/181765000-08110622-170e-41fb-b1e7-643c11b4c522.png)
 
 
 ### Resultados
 
-A precisão dos sensores é satisfatória. O valor de ângulo varia um pouco mesmo com a biruta estável porém a variação é pequena. Os valores de velocidade são calculados com sucesso e, junto deles o valor de pico para um determinado intervalor de tempo.
+A precisão dos sensores é satisfatória. O valor de ângulo varia um pouco mesmo com a biruta estável porém a variação é pequena. Os valores de velocidade são calculados com sucesso e, junto deles o valor de pico para um determinado intervalor de tempo. Com estes dados, foi possível avaliar com sucesso potenciais riscos na instalação de aerogeradores no contexto econômico e sua viabilidade.
 
-O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que independe da distância com o usuário e possui maior compatibilidade com o sistema operacional em que o projeto foi desenvolvido (Windows).
+O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que independe da distância com o usuário e possui maior compatibilidade com o sistema operacional em que o projeto foi desenvolvido (Windows). O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório. 
 
-O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
-
-
-
-
-
+Se comparada à energia solar, a energia eólica depende de uma quantidade maior de fatores tanto construtivos quanto do ambiente em que será inserido. Por depender de movimento de partes mecânicas, possui um custo mais elevado de manutenção. Além disso, é necessário uma avaliação do fluxo migratório de aves para instalações de grande porte e, devido ao grande ruído constante, também deve ser instalada distante de locais residenciais. A legislação em diversos paíse aborda de maneira diferente a distância mínima de um aerogerador de áreas residencias, podendo ser um valor fixo ou variar conforme a altura da torre. Por conta disso, a energia eólica acaba se tornando menos interessante do que outras modalidades de geração de energia.
 
 ------
 
@@ -385,3 +383,5 @@ Estudo de viabilidade Econômica para a implantação de uma fonte de energia re
 Análise do desempenho de um aerogerador de pequeno porte. Ivoni C. Acunha Jr & Jorge A. Almeida, 2006. Dispoível em: https://semengo.furg.br/images/2006/06.pdf. Acesso em: 22 julho 2022
 
 Estimativa do Custo de Instalação de um Sistema Eólico de Pequeno Porte para Consumo de Energia Elétrica Residencial. Zaira Marques de Souza. Disponível em: https://cdn.congresse.me/286dvjx527s95q6nsk0waa4cpp5l Acesso em: 29 julho 2022
+
+Simulação do ruído de aerogeradores em parques eólicos. Eduardo Pereira da Luz, 2018 Disponível em: https://core.ac.uk/download/pdf/161517387.pdf. Acesso em: 29 julho 2022
