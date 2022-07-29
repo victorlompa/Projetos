@@ -321,7 +321,7 @@ Os dados da database foram transformados em uma planilha do excel utilizando o [
 Os dados de direção podem nos indicar a direção predominante do vento no determinado local ou indicar que o local pode apresentar variações repentinas na direção do vento que podem acabar por diminuir a eficiência de um possível aerogerador.
 
 
-![Direction](https://user-images.githubusercontent.com/53865196/181690793-27a0aaef-d8cb-46cf-90ae-62cb1e2dd3a9.png)
+![Direction](https://user-images.githubusercontent.com/53865196/181717654-4a24aa1a-0408-4886-beed-2eec44b1300d.png)
 
 Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atuar na potência nominal, os limites de velocidade nominal e limite são dados que devem ser colocados pelo usuário conforme o aerogerador planejado. É ideal que os dados de velocidade estejam dentro da faixa delimitada pelas linha verde e linha vermelha, identificadas como velocidade nominal e limite, respectivamente.
 
@@ -369,3 +369,5 @@ Getting Started with ESP32 Bluetooth Low Energy (BLE) on Arduino IDE.  Random Ne
 BLE C++ Guide.  Neil Kolban 2018. Disponível em: https://github.com/nkolban/esp32-snippets/blob/master/Documentation/BLE%20C%2B%2B%20Guide.pdf. Acesso em: 01 junho de 2022
 
 Estudo de viabilidade Econômica para a implantação de uma fonte de energia renovável em uma grande consumidore de grande . Raoni Stefano de Lima Ceci, 2016. Disponível em: http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf. Acesso em: 22 julho 2022
+
+Análise do desempenho de um aerogerador de pequeno porte. Ivoni C. Acunha Jr & Jorge A. Almeida, 2006. Dispoível em: https://semengo.furg.br/images/2006/06.pdf. Acesso em: 22 julho 2022
