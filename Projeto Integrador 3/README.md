@@ -333,7 +333,7 @@ Concluida a análise do aerogerador para potência nominal, é possível obter u
 
 ![weg](https://user-images.githubusercontent.com/53865196/181701031-9c0a6869-6258-40ef-99b4-dcae80e396b0.png)
 
-Este [aerogerador](https://static.weg.net/medias/downloadcenter/hee/hf1/WEG-aerogerador-agw-110-2.1-50030583-catalogo-portugues-br.pdf), por exemplo, apresenta a curva de potência e velocidade de corte e limite que nos permitem prever o comportamente do mesmo em relação à potência gerada.
+Este [aerogerador](https://static.weg.net/medias/downloadcenter/hee/hf1/WEG-aerogerador-agw-110-2.1-50030583-catalogo-portugues-br.pdf), por exemplo, apresenta a curva de potência e velocidade de corte e limite que nos permitem prever o comportamente do mesmo em relação à potência gerada. [Este](http://energybras.com.br/produtos/aerogeradores/modelo-h64-5000w) modelo que poderia ser utilizado como base para cálculo de aerogeradores de pequeno e médio porte
 
 Na sessão da planilha referente às condições de trabalho do aerogerados, calcula-se a porcentagem de tempo em que o aerogerador trabalha dentro das faixa de velocidade nominal e limite e abaixo dela. Com isso, é possível ter um valor aproximado da geração de energia considerando a potência nominal esperada para o mesmo.
 
