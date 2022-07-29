@@ -326,7 +326,7 @@ Os dados de direção podem nos indicar a direção predominante do vento no det
 Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atuar na potência nominal, os limites de velocidade nominal e limite são dados que devem ser colocados pelo usuário conforme o aerogerador planejado. É ideal que os dados de velocidade estejam dentro da faixa delimitada pelas linha verde e linha vermelha, identificadas como velocidade nominal e limite, respectivamente.
 
 
-![Speed](https://user-images.githubusercontent.com/53865196/181723164-3a51cb4d-5b77-42a6-b39c-0521e1f87274.png)
+![Speed](https://user-images.githubusercontent.com/53865196/181723456-a6685c6f-394a-4c42-8abc-5a0cd423a2f1.png)
 
 Concluida a análise do aerogerador para potência nominal, é possível obter um cálculo aproximado do retorno econômico. Para isso, é necessário prever perdas da rede básica para consumo e para geração da energia e perdas na rede de distribuição. Estes dados nem sempre são exatos e precisariam de um estudo mais aprofundado acerca do tema específico.
 
