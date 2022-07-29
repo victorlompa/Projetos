@@ -104,7 +104,7 @@ Os footprints dos módulos utilizados no projeto não condizem com os da impress
 
 O circuito para utilização do sensor de efeito hall apresentado abaixo conta com um BC548 funcionando como chave. A saída possui um resistor de pull-up colocando o pino do ESP32 para 3.3V quando o transistor não está polarizado. Quando o sensor detecta um campo magnético forte o suficiente, apresenta 5V na sua saída, polarizando o transistor e, consequentemente, jogando GND na saída do pino do ESP.
 
-A escolha dos ímãs é importante. Por mais que alguns deles funcionem ao testar o sensor dado a proximidade e a ausência de obstáculos, alguns deles podem não funcionar quando fixados no protótipo por serem fracos demais.
+A escolha dos ímãs é importante. Por mais que alguns deles funcionem ao testar o sensor dado a proximidade e a ausência de obstáculos, alguns deles podem não funcionar quando fixados no protótipo por serem fracos demais. Os ímas do dado projeto foram retirados de um fone de ouvido antigo e testados no protótipo para verificar sua usabilidade.
 
 ![Untitled Sketch 2_bb](https://user-images.githubusercontent.com/53865196/181165547-b9638bf8-c292-4eda-9352-11f571046838.jpg)
 
@@ -306,6 +306,25 @@ void loop()
 
 ------
 
+### Análise de dados
+
+Os dados na database são separados pela identificação da data e horário, onde cada um possui a direção no momento do envio, média de velocidade e o maior pico de velocidade no intervalo de obtenção dos dados. O valor de pico é identificado a cada segundo.
+
+
+![Sem título](https://user-images.githubusercontent.com/53865196/181165618-43a49c92-6297-4766-9136-80ac9b9b36c5.jpg)
+
+Os dados da database foram transformados em uma planilha do excel utilizando o [Flatly](https://flatly.io/scheduler), que permite ao usuário uma atualização da planilha com os dados de 6 em 6 horas. Com estes dados planificados, foi possível conectar a planilha gerada a uma outra planilha responsável pela análise e apresentação gráfica dos dados, pois a planilha atualizada periodicamente acabaria por apagar os gráficos gerados e cálculos obtidos. A planilha gerada é salva no onedrive, permitindo ao usuário o acesso remoto aos dados necessários para a análise da estação.
+
+
+![flatly](https://user-images.githubusercontent.com/53865196/181691290-2ba38c29-4a14-4cb2-b1dc-7c9b44647d05.png)
+
+Os dados de direção podem nos indicar a direção predominante do vento no determinado local ou indicar que o local pode apresentar variações repentinas na direção do vento que podem acabar por diminuir a eficiência de um possível aerogerador.
+
+
+![Direction](https://user-images.githubusercontent.com/53865196/181690793-27a0aaef-d8cb-46cf-90ae-62cb1e2dd3a9.png)
+
+------
+
 ### Resultados
 
 A precisão dos sensores é satisfatória. O valor de ângulo varia um pouco mesmo com a biruta estável porém a variação é pequena. Os valores de velocidade são calculados com sucesso e, junto deles o valor de pico para um determinado intervalor de tempo.
@@ -314,19 +333,6 @@ O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que inde
 
 O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
 
-![Sem título](https://user-images.githubusercontent.com/53865196/181165618-43a49c92-6297-4766-9136-80ac9b9b36c5.jpg)
-
-Os dados da database foram transformados em uma planilha do excel utilizando o [Flatly](https://flatly.io/scheduler), que permite ao usuário uma atualização da planilha com os dados de 6 em 6 horas. Com estes dados planificados, foi possível conectar a planilha gerada a uma outra planilha responsável pela análise e apresentação gráfica dos dados, pois a planilha atualizada periodicamente acabaria por apagar os gráficos gerados e cálculos obtidos. A planilha gerada é salva no onedrive, permitindo ao usuário o acesso remoto aos dados necessários para a análise da estação.
-
-![flatly](https://user-images.githubusercontent.com/53865196/181691290-2ba38c29-4a14-4cb2-b1dc-7c9b44647d05.png)
-
-Os dados de direção podem nos indicar a direção predominante do vento no determinado local ou indicar que o local pode apresentar variações repentinas na direção do vento que podem acabar por diminuir a eficiência de um possível aerogerador.
-
-![Direction](https://user-images.githubusercontent.com/53865196/181690793-27a0aaef-d8cb-46cf-90ae-62cb1e2dd3a9.png)
-
-------
-
-### Considerações Finais
 
 
 
