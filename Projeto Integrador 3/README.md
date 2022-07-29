@@ -314,11 +314,15 @@ O WiFi se mostrou ser uma ferramenta mais confiável do que o BLE visto que inde
 
 O banco de dados permite armazenas todas as informações necessárias para análise de dados e possui um tempo de resposta satisfatório.
 
-
 ![Sem título](https://user-images.githubusercontent.com/53865196/181165618-43a49c92-6297-4766-9136-80ac9b9b36c5.jpg)
 
-chart.js
+Os dados da database foram transformados em uma planilha do excel utilizando o [Flatly](https://flatly.io/scheduler), que permite ao usuário uma atualização da planilha com os dados de 6 em 6 horas. Com estes dados planificados, foi possível conectar a planilha gerada a uma outra planilha responsável pela análise e apresentação gráfica dos dados, pois a planilha atualizada periodicamente acabaria por apagar os gráficos gerados e cálculos obtidos. A planilha gerada é salva no onedrive, permitindo ao usuário o acesso remoto aos dados necessários para a análise da estação.
 
+![flatly](https://user-images.githubusercontent.com/53865196/181691290-2ba38c29-4a14-4cb2-b1dc-7c9b44647d05.png)
+
+Os dados de direção podem nos indicar a direção predominante do vento no determinado local ou indicar que o local pode apresentar variações repentinas na direção do vento que podem acabar por diminuir a eficiência de um possível aerogerador.
+
+![Direction](https://user-images.githubusercontent.com/53865196/181690793-27a0aaef-d8cb-46cf-90ae-62cb1e2dd3a9.png)
 
 ------
 
