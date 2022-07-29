@@ -328,6 +328,7 @@ Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atu
 
 ![Speed](https://user-images.githubusercontent.com/53865196/181697413-846c310d-5b0d-4e7c-8c0a-eb7143565843.png)
 
+Concluida a análise do aerogerador para potência nominal, é possível obter um cálculo aproximado do retorno econômico. Para isso, é necessário prever perdas da rede básica para consumo e para geração da energia e perdas na rede de distribuição. Estes dados nem sempre são exatos e precisariam de um estudo mais aprofundado acerca do tema específico.
 
 ### Resultados
 
@@ -360,8 +361,6 @@ Energia Eólica: Viabilidade Técnica e Econômico-Financeira, João Monlevade 2
 
 Getting Started with ESP32 Bluetooth Low Energy (BLE) on Arduino IDE.  Random Nerd Tutorials 2019. Disponível em: https://randomnerdtutorials.com/esp32-bluetooth-low-energy-ble-arduino-ide/. Acesso em: 25 maio de 2022
 
-BLE C++ Guide.  Neil Kolban 2018. Disponível em: https://github.com/nkolban/esp32-snippets/blob/master/Documentation/BLE%20C%2B%2B%20Guide.pdf. Acesso em 01 junho de 2022
+BLE C++ Guide.  Neil Kolban 2018. Disponível em: https://github.com/nkolban/esp32-snippets/blob/master/Documentation/BLE%20C%2B%2B%20Guide.pdf. Acesso em: 01 junho de 2022
 
-[Estudo de viabilidade Econômica para a implantação de uma fonte de energia renovável em uma grande consumidore de grande porte](http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf)
-
-https://capsistema.com.br/index.php/2020/06/02/conectando-o-esp8266-ao-stm32f103c8-criando-um-servidor-da-web/
+Estudo de viabilidade Econômica para a implantação de uma fonte de energia renovável em uma grande consumidore de grande . Raoni Stefano de Lima Ceci, 2016. Disponível em: http://repositorio.utfpr.edu.br/jspui/bitstream/1/12581/1/viabilidadeimplanta%C3%A7%C3%A3oenergiarenov%C3%A1vel.pdf. Acesso em: 22 julho 2022
