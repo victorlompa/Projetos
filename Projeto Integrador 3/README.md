@@ -323,7 +323,7 @@ Os dados de direção podem nos indicar a direção predominante do vento no det
 
 ![Direction](https://user-images.githubusercontent.com/53865196/181690793-27a0aaef-d8cb-46cf-90ae-62cb1e2dd3a9.png)
 
-Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atuar na potência nominal, os limites de velocidade nominal e limite são dados que devem ser colocados pelo usuário conforme o aerogerador planejado.
+Os dados de velocidade nos indicam se o aerogerador instalado será capaz de atuar na potência nominal, os limites de velocidade nominal e limite são dados que devem ser colocados pelo usuário conforme o aerogerador planejado. É ideal que os dados de velocidade estejam dentro da faixa delimitada pelas linha verde e linha vermelha, identificadas como velocidade nominal e limite, respectivamente.
 
 
 ![Speed](https://user-images.githubusercontent.com/53865196/181697413-846c310d-5b0d-4e7c-8c0a-eb7143565843.png)
